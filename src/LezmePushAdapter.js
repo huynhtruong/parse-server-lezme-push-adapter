@@ -33,7 +33,7 @@ export default class LezmePushAdapter {
           break;
         case 'android':
         case 'fcm':
-          this.senderMap[pushType] = new MGCM.MGCM(pushConfig[pushType]);
+          this.senderMap[pushType] = new MGCM(pushConfig[pushType]);
           break;
       }
     }

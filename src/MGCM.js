@@ -10,7 +10,7 @@ const GCMTimeToLiveMax = 4 * 7 * 24 * 60 * 60; // GCM allows a max of 4 weeks
 const GCMRegistrationTokensMax = 1000;
 
 
-export class MGCM {
+export default class MGCM {
 
     constructor(args) {
         // Define class members
