@@ -4,11 +4,10 @@ import log from 'npmlog';
 import MGCM from './MGCM';
 import { utils } from 'parse-server-push-adapter';
 import { APNS } from 'parse-server-push-adapter';
-import { GCM } from 'parse-server-push-adapter';
 
 const LOG_PREFIX = 'lezme-parse-server-push-adapter';
 
-export default class LezmePushAdapter {
+export class LezmePushAdapter {
 
   supportsPushTracking = true;
 
@@ -34,7 +33,7 @@ export default class LezmePushAdapter {
           break;
         case 'android':
         case 'fcm':
-          this.senderMap[pushType] = new MGCM(pushConfig[pushType]);
+          this.senderMap[pushType] = new MGCM.MGCM(pushConfig[pushType]);
           break;
       }
     }

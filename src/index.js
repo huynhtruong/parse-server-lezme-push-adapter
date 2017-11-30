@@ -1,7 +1,7 @@
 "use strict";
-// LezmeParsePushAdapter is the default implementation of
+// LezmePushAdapter is the enhancement of
 // PushAdapter, it uses GCM for android push and APNS
-// for ios push.
+// for ios push. It supports multi-topic of GCM
 import log from 'npmlog';
 
 /* istanbul ignore if */
