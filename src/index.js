@@ -10,6 +10,5 @@ if (process.env.VERBOSE || process.env.VERBOSE_PARSE_SERVER_PUSH_ADAPTER) {
 }
 
 import LezmePushAdapter from './LezmePushAdapter';
-export default LezmePushAdapter;
 
 module.exports = LezmePushAdapter;

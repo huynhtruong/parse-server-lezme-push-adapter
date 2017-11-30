@@ -7,7 +7,7 @@ import { APNS } from 'parse-server-push-adapter';
 
 const LOG_PREFIX = 'lezme-parse-server-push-adapter';
 
-export class LezmePushAdapter {
+export default class LezmePushAdapter {
 
   supportsPushTracking = true;
 
