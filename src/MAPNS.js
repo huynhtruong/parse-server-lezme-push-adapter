@@ -5,7 +5,7 @@ import log from 'npmlog';
 
 const LOG_PREFIX = 'parse-server-push-adapter MAPNS';
 
-export class MAPNS {
+export default class MAPNS {
 
   /**
    * Create a new provider for the APN service.
@@ -51,7 +51,7 @@ export class MAPNS {
       let provider = MAPNS._createProvider(apnsArgs);
       this.providers.push(provider);
       this.mapProviders[apnsArgs.topic] = this.mapProviders[apnsArgs.topic] || [];
-      this.mapProviders[appIdentifier].push(provider);
+      this.mapProviders[apnsArgs.topic].push(provider);
      
     }
 
@@ -149,7 +149,7 @@ export class MAPNS {
   static _createProvider(apnsArgs) {
     // if using certificate, then topic must be defined
     if (!MAPNS._validateAPNArgs(apnsArgs)) {
-      throw new Parse.Error(Parse.Error.PUSH_MISCONFIGURED, 'topic is mssing for %j', apnsArgs);
+      throw new Parse.Error(Parse.Error.PUSH_MISCONFIGURED, 'topic is missing for %j', apnsArgs);
     }
 
     let provider = new apn.Provider(apnsArgs);
@@ -276,5 +276,3 @@ export class MAPNS {
     });
   }
 }
-
-export default MAPNS;
