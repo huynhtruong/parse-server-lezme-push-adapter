@@ -2,8 +2,8 @@
 import Parse from 'parse';
 import log from 'npmlog';
 import MGCM from './MGCM';
+import MAPNS from './MAPNS';
 import { utils } from 'parse-server-push-adapter';
-import { APNS } from 'parse-server-push-adapter';
 
 const LOG_PREFIX = 'lezme-parse-server-push-adapter';
 

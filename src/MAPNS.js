@@ -95,7 +95,7 @@ export default class MAPNS {
 
       // No Providers found
       if (!providers || providers.length === 0) {
-        let errorPromises = devices.map(device => APNS._createErrorPromise(device.deviceToken, 'No Provider found'));
+        let errorPromises = devices.map(device => MAPNS._createErrorPromise(device.deviceToken, 'No Provider found'));
         allPromises = allPromises.concat(errorPromises);
         continue;
       }
