@@ -29,7 +29,7 @@ export default class LezmePushAdapter {
         case 'ios':
         case 'tvos':
         case 'osx':
-          this.senderMap[pushType] = new APNS(pushConfig[pushType]);
+          this.senderMap[pushType] = new MAPNS(pushConfig[pushType]);
           break;
         case 'android':
         case 'fcm':
