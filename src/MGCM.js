@@ -175,17 +175,23 @@ MGCM.prototype.send = function (data, devices) {
  * @returns {Object} A promise which is resolved after we get results from gcm
  */
 function generateGCMPayload(requestData, pushId, timeStamp, expirationTime) {
-    //let payload = {
-    //    priority: 'high'
-    //};
-    let payload = requestData.data;
-    payload.priority = 'high';
+    let payload = {
+        priority: 'high'
+      };
+    
+    payload.data = JSON.parse(JSON.stringify(requestData.data));
 
-    payload.data = {
-        data: requestData.data,
-        push_id: pushId,
-        time: new Date(timeStamp).toISOString()
-    }
+    payload.data.data = requestData.data;
+
+    payload.data.push_id = pushId;
+
+    payload.data.time = new Date(timeStamp).toISOString();
+
+    //payload.data = {
+    //    data: requestData.data,
+    //    push_id: pushId,
+    //    time: new Date(timeStamp).toISOString()
+    //};
     const optionalKeys = ['content_available', 'notification'];
     optionalKeys.forEach((key, index, array) => {
         if (requestData.hasOwnProperty(key)) {
