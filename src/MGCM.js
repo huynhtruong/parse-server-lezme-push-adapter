@@ -9,7 +9,9 @@ const LOG_PREFIX = 'parse-server-push-adapter MGCM';
 const GCMTimeToLiveMax = 4 * 7 * 24 * 60 * 60; // GCM allows a max of 4 weeks
 const GCMRegistrationTokensMax = 1000;
 
-
+var data = datas.message;
+  data.alert = datas.title;
+  data.body = datas.body;
 export default class MGCM {
 
     constructor(args) {
@@ -176,9 +178,12 @@ MGCM.prototype.send = function (data, devices) {
  * @returns {Object} A promise which is resolved after we get results from gcm
  */
 function generateGCMPayload(requestData, pushId, timeStamp, expirationTime) {
-    let payload = {
-        priority: 'high'
-    };
+    //let payload = {
+    //    priority: 'high'
+    //};
+    let payload = requestData.data;
+    payload.priority = 'high';
+    
     payload.data = {
         data: requestData.data,
         push_id: pushId,
