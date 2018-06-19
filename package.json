@@ -1,6 +1,6 @@
 {
   "name": "lezme-push-adapter",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Bases on parse-server-push-adapter",
   "main": "lib/index.js",
   "files": [
@@ -33,11 +33,11 @@
     "nyc": "^11.0.2"
   },
   "dependencies": {
-    "@parse/node-gcm": "^0.14.0",
-    "apn": "^3.0.0-alpha1",
+    "@parse/node-gcm": "^0.14.10",
+    "apn": "^2.2.0",
     "npmlog": "^4.0.2",
     "parse": "^1.9.2",
-    "@parse/push-adapter": "3.0.0-alpha2"
+    "@parse/push-adapter": "3.0.0-alpha1"
   },
   "engines": {
     "node": ">= 4.6.0"
